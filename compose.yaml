@@ -1,0 +1,28 @@
+services:
+  comfyui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: comfyui
+    image: ravensorb/comfyui-docker:latest
+    restart: unless-stopped
+    user: "0:0"
+    env_file:
+      - .env
+    ports:
+      - "8189:8188"
+    volumes:
+      - "./data_beta/app:/app"
+      - "./data_beta/config:/config"
+    environment:
+      - CLI_ARGS=
+      - HF_TOKEN=${HF_TOKEN}
+      - LOW_VRAM=${LOW_VRAM:-false}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities:
+                - gpu

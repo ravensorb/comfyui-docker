@@ -1,6 +1,6 @@
 # ComfyUI Flux
 
-ComfyUI Flux is a Docker-based setup for running [ComfyUI](https://github.com/comfyanonymous/ComfyUI) with [FLUX.1](https://www.basedlabs.ai/tools/flux1) models and additional features.
+ComfyUI Flux is a Docker-based setup for running [ComfyUI](https://github.com/comfyanonymous/ComfyUI) with [FLUX.1](https://www.basedlabs.ai/tools/flux1) models and [HunyuanVideo](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper) as well as a few additional features.
 
 ## Features
 
@@ -24,52 +24,48 @@ ComfyUI Flux is a Docker-based setup for running [ComfyUI](https://github.com/co
    ```bash
    HF_TOKEN=your_huggingface_token
    LOW_VRAM=false  # Set to true to enable low VRAM mode
+   COMFYUI_DOWNLOAD_VIDEO_MODELS=true # Download HunyuanVideo_repackaged related models (they are large)
    ```
 
 2. Download the `docker-compose.yml` file:
 
-   ```bash
-   wget https://raw.githubusercontent.com/frefrik/comfyui-flux/main/docker-compose.yml
-   ```
+  ```bash
+  wget https://raw.githubusercontent.com/ravensorb/comfyui-docker/main/compose.yml
+  ```
 
-   Alternatively, you can create a `docker-compose.yml` file and copy/paste the following contents:
+  Alternatively, you can create a `compose.yml` file and copy/paste the following contents:
 
-   ```yaml
-   services:
-     comfyui:
-       container_name: comfyui
-       image: frefrik/comfyui-flux:latest
-       restart: unless-stopped
-       ports:
-         - "8188:8188"
-       volumes:
-         - "./data:/app"
-       environment:
-         - CLI_ARGS=
-         - HF_TOKEN=${HF_TOKEN}
-         - LOW_VRAM=${LOW_VRAM:-false}
-       deploy:
-         resources:
-           reservations:
-             devices:
-               - driver: nvidia
-                 device_ids: ['0']
-                 capabilities: [gpu]
-   ```
-
-   **Note:** The default Docker image uses CUDA 12.1 (`cu121`). If you require CUDA 12.4, you can specify the `cu124` tag in the image name. For example:
-
-   ```yaml
-   image: frefrik/comfyui-flux:cu124
-   ```
+  ```yaml
+  services:
+    comfyui:
+      container_name: comfyui
+      image: ravensorb/comfyui-docker:latest
+      restart: unless-stopped
+      ports:
+        - "8188:8188"
+      volumes:
+        - "./data:/app"
+      environment:
+        - CLI_ARGS=
+        - HF_TOKEN=${HF_TOKEN}
+        - LOW_VRAM=${LOW_VRAM:-false}
+      deploy:
+        resources:
+          reservations:
+            devices:
+              - driver: nvidia
+                count: all
+                capabilities:
+                  - gpu
+  ```
 
 3. Run the container using Docker Compose:
 
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
-   **Note:** The first time you run the container, it will download all the included models before starting up. This process may take some time depending on your internet connection.
+   **Note:** The first time you run the container, it will download all the included models before starting up. This process may take some time depending on your internet connection (could be 20 minutes or more).
 
 4. Access ComfyUI in your browser at `http://localhost:8188`
 
@@ -114,20 +110,20 @@ Download the images below and drag them into ComfyUI to load the corresponding w
 
 | FLUX.1[schnell] | FLUX.1[dev] |
 |-----------------|-------------|
-| <div align="center">![Flux Schnell](./images/flux-schnell.png)<br>[Download](https://raw.githubusercontent.com/frefrik/comfyui-flux/refs/heads/main/images/flux-schnell.png)</div> | <div align="center">![Flux Dev](./images/flux-dev.png)<br>[Download](https://raw.githubusercontent.com/frefrik/comfyui-flux/refs/heads/main/images/flux-dev.png)</div> |
+| <div align="center">![Flux Schnell](./images/flux-schnell.png)<br>[Download](https://raw.githubusercontent.com/ravensorb/comfyui-docker/refs/heads/main/images/flux-schnell.png)</div> | <div align="center">![Flux Dev](./images/flux-dev.png)<br>[Download](https://raw.githubusercontent.com/ravensorb/comfyui-docker/refs/heads/main/images/flux-dev.png)</div> |
 
 ### FP8 versions (LOW_VRAM)
 
 | FLUX.1[schnell] FP8 | FLUX.1[dev] FP8 |
 |---------------------|-----------------|
-| <div align="center">![Flux Schnell FP8](./images/flux-schnell-fp8.png)<br>[Download](https://raw.githubusercontent.com/frefrik/comfyui-flux/main/images/flux-schnell-fp8.png)</div> | <div align="center">![Flux Dev FP8](./images/flux-dev-fp8.png)<br>[Download](https://raw.githubusercontent.com/frefrik/comfyui-flux/main/images/flux-dev-fp8.png)</div> |
+| <div align="center">![Flux Schnell FP8](./images/flux-schnell-fp8.png)<br>[Download](https://raw.githubusercontent.com/ravensorb/comfyui-docker/main/images/flux-schnell-fp8.png)</div> | <div align="center">![Flux Dev FP8](./images/flux-dev-fp8.png)<br>[Download](https://raw.githubusercontent.com/ravensorb/comfyui-docker/main/images/flux-dev-fp8.png)</div> |
 
 ## Updating
 
 The ComfyUI and ComfyUI-Manager are automatically updated when the container starts. To update the base image and other dependencies, pull the latest version of the Docker image using:
 
 ```bash
-docker-compose pull
+docker compose pull
 ```
 
 ## Additional Notes

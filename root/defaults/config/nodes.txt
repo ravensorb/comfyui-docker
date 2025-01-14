@@ -1,0 +1,2 @@
+https://github.com/marduk191/ComfyUI-Fluxpromptenhancer /app/ComfyUI/custom_nodes/comfyui-fluxpromptenhancer
+https://github.com/pythongosssss/ComfyUI-Custom-Scripts /app/ComfyUI/custom_nodes/comfyui-custom-scripts
