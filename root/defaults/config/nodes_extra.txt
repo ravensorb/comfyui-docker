@@ -1,0 +1,207 @@
+# SDXL
+https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors
+    dir=ComfyUI/models/checkpoints
+    out=sd_xl_base_1.0.safetensors
+
+https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors
+    dir=ComfyUI/models/checkpoints
+    out=sd_xl_refiner_1.0.safetensors
+
+# https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0_0.9vae.safetensors
+# dir=ComfyUI/models/checkpoints
+# out=sd_xl_base_1.0_0.9vae.safetensors
+
+# SD1.5
+# https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt
+#     dir=ComfyUI/models/checkpoints
+#     out=v1-5-pruned-emaonly.ckpt
+
+https://huggingface.co/stabilityai/stable-diffusion-2-1-base/resolve/main/v2-1_512-ema-pruned.safetensors
+    dir=ComfyUI/models/checkpoints
+    out=v2-1_512-ema-pruned.safetensors
+
+# https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.safetensors
+#     dir=ComfyUI/models/checkpoints
+#     out=v2-1_768-ema-pruned.safetensors
+
+# unCLIP models
+# https://huggingface.co/comfyanonymous/illuminatiDiffusionV1_v11_unCLIP/resolve/main/illuminatiDiffusionV1_v11-unclip-h-fp16.safetensors
+#     dir=ComfyUI/models/checkpoints
+#     out=illuminatiDiffusionV1_v11-unclip-h-fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/wd-1.5-beta2_unCLIP/resolve/main/wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors
+#     dir=ComfyUI/models/checkpoints
+#     out=wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors
+
+# ---
+# VAE
+https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors
+    dir=ComfyUI/models/vae
+    out=vae-ft-mse-840000-ema-pruned.safetensors
+
+# Loras
+# https://civitai.com/api/download/models/10350
+    # dir=ComfyUI/models/loras
+    # out=theovercomer8sContrastFix_sd21768.safetensors
+
+# https://civitai.com/api/download/models/10638
+    # dir=ComfyUI/models/loras
+    # out=theovercomer8sContrastFix_sd15.safetensors
+
+# T2I-Adapter
+# https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_depth_sd14v1.pth
+    # dir=ComfyUI/models/controlnet
+    # out=t2iadapter_depth_sd14v1.pth
+
+# https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_seg_sd14v1.pth
+    # dir=ComfyUI/models/controlnet
+    # out=t2iadapter_seg_sd14v1.pth
+
+# https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_sketch_sd14v1.pth
+    # dir=ComfyUI/models/controlnet
+    # out=t2iadapter_sketch_sd14v1.pth
+
+# https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_keypose_sd14v1.pth
+    # dir=ComfyUI/models/controlnet
+    # out=t2iadapter_keypose_sd14v1.pth
+
+# https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_openpose_sd14v1.pth
+    # dir=ComfyUI/models/controlnet
+    # out=t2iadapter_openpose_sd14v1.pth
+
+# https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_color_sd14/v1.pth
+    # dir=ComfyUI/models/controlnet
+    # out=t2iadapter_color_sd14v1.pth
+
+# https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_canny_sd14v1.pth
+    # dir=ComfyUI/models/controlnet
+    # out=t2iadapter_canny_sd14v1.pth
+
+# T2I Styles Model
+# https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_style_sd14v1.pth
+    # dir=ComfyUI/models/style_models
+    # out=t2iadapter_style_sd14v1.pth
+
+# CLIPVision model (needed for styles model)
+# https://huggingface.co/openai/clip-vit-large-patch14/resolve/main/pytorch_model.bin -O ./models/clip_vision/clip_vit14.bin
+
+# ControlNet
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11e_sd15_ip2p_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11e_sd15_ip2p_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11e_sd15_shuffle_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11e_sd15_shuffle_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_canny_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11p_sd15_canny_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11f1p_sd15_depth_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11f1p_sd15_depth_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_inpaint_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11p_sd15_inpaint_fp16.safetensors
+
+https://huggingface.co/thibaud/controlnet-sd21/resolve/main/control_v11p_sd21_lineart.safetensors
+    dir=ComfyUI/models/controlnet
+    out=control_v11p_sd21_lineart.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_lineart_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11p_sd15_lineart_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_mlsd_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11p_sd15_mlsd_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_normalbae_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11p_sd15_normalbae_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_openpose_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11p_sd15_openpose_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_scribble_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11p_sd15_scribble_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_seg_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11p_sd15_seg_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_softedge_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11p_sd15_softedge_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15s2_lineart_anime_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11p_sd15s2_lineart_anime_fp16.safetensors
+
+# https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11u_sd15_tile_fp16.safetensors
+    # dir=ComfyUI/models/controlnet
+    # out=control_v11u_sd15_tile_fp16.safetensors
+
+https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/resolve/main/OpenPoseXL2.safetensors
+    dir=ComfyUI/models/controlnet
+    out=OpenPoseXL2.safetensors
+
+# https://huggingface.co/stabilityai/control-lora
+https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-canny-rank256.safetensors
+    dir=ComfyUI/models/controlnet
+    out=control-lora-canny-rank256.safetensors
+
+https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-depth-rank256.safetensors
+    dir=ComfyUI/models/controlnet
+    out=control-lora-depth-rank256.safetensors
+
+https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-recolor-rank256.safetensors
+    dir=ComfyUI/models/controlnet
+    out=control-lora-recolor-rank256.safetensors
+
+https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank256/control-lora-sketch-rank256.safetensors
+    dir=ComfyUI/models/controlnet
+    out=control-lora-sketch-rank256.safetensors
+
+https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank128/control-lora-canny-rank128.safetensors
+    dir=ComfyUI/models/controlnet
+    out=control-lora-canny-rank128.safetensors
+
+https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank128/control-lora-depth-rank128.safetensors
+    dir=ComfyUI/models/controlnet
+    out=control-lora-depth-rank128.safetensors
+
+https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank128/control-lora-recolor-rank128.safetensors
+    dir=ComfyUI/models/controlnet
+    out=control-lora-recolor-rank128.safetensors
+
+https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank128/control-lora-sketch-rank128-metadata.safetensors
+    dir=ComfyUI/models/controlnet
+    out=control-lora-sketch-rank128-metadata.safetensors
+
+# https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/resolve/main/diffusion_pytorch_model.bin
+    # dir=ComfyUI/models/controlnet
+    # out=OpenPoseXL2.bin
+
+# GLIGEN
+https://huggingface.co/comfyanonymous/GLIGEN_pruned_safetensors/resolve/main/gligen_sd14_textbox_pruned_fp16.safetensors
+    dir=ComfyUI/models/gligen
+    out=gligen_sd14_textbox_pruned_fp16.safetensors
+
+# ESRGAN upscale model
+https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth
+    dir=ComfyUI/models/upscale_models
+    out=RealESRGAN_x4plus.pth
+
+https://huggingface.co/sberbank-ai/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth
+    dir=ComfyUI/models/upscale_models
+    out=RealESRGAN_x2.pth
+
+https://huggingface.co/sberbank-ai/Real-ESRGAN/resolve/main/RealESRGAN_x4.pth
+    dir=ComfyUI/models/upscale_models
+    out=RealESRGAN_x4.pth
+

@@ -5,15 +5,15 @@ services:
       dockerfile: Dockerfile
     container_name: comfyui
     image: ravensorb/comfyui-docker:latest
-    restart: unless-stopped
+    restart: no
     user: "0:0"
     env_file:
       - .env
     ports:
       - "8189:8188"
     volumes:
-      - "./data_beta/app:/app"
-      - "./data_beta/config:/config"
+      - "./data/app:/app"
+      - "./data/config:/config"
     environment:
       - CLI_ARGS=
       - HF_TOKEN=${HF_TOKEN}

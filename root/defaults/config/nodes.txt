@@ -1,2 +1,7 @@
 https://github.com/marduk191/ComfyUI-Fluxpromptenhancer /app/ComfyUI/custom_nodes/comfyui-fluxpromptenhancer
 https://github.com/pythongosssss/ComfyUI-Custom-Scripts /app/ComfyUI/custom_nodes/comfyui-custom-scripts
+
+# https://github.com/Fannovel16/comfy_controlnet_preprocessors /app/ComfyUI/custom_nodes/comfy_controlnet_preprocessors
+# https://github.com/Fannovel16/comfyui_controlnet_aux /app/ComfyUI/custom_nodes/comfy_controlnet_aux
+# https://github.com/Stability-AI/stability-ComfyUI-nodes /app/ComfyUI/custom_nodes/stability-ComfyUI-nodes
+# https://github.com/EllangoK/ComfyUI-post-processing-nodes /app/ComfyUI/custom_nodes/ComfyUI-post-processing-nodes

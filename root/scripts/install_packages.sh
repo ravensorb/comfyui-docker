@@ -16,12 +16,14 @@ install_apt_packages() {
     fi
 
     echo "Updating apt cache..."
-    apt-get -qq update
+    apt-get $( [ -z "${DEBUG}" ] && echo "-qq" ) update
 
     while IFS= read -r package || [ -n "$package" ]; do
+        # Skip lines that start with '#'
+        [[ "$package" =~ ^#.*$ ]] || [[ -z "$repo_url" ]] && continue
         if [ -n "$package" ]; then
             echo "Installing apt package: $package..."
-            apt-get install -y -qq "$package"
+            apt-get install -y $( [ -z "${DEBUG}" ] && echo "-qq" ) "$package"
             if [ $? -eq 0 ]; then
                 echo "$package installed successfully"
             else
@@ -47,13 +49,13 @@ install_pip_packages() {
     # Ensure pip is installed
     if ! command -v pip &> /dev/null; then
         echo "pip not found. Installing pip..."
-        apt-get update && apt-get install -y python3-pip
+        apt-get update && apt-get install -y $( [ -z "${DEBUG}" ] && echo "-qq" ) python3-pip
     fi
 
     while IFS= read -r package || [ -n "$package" ]; do
         if [ -n "$package" ]; then
             echo "Installing pip package: $package..."
-            pip install -q "$package"
+            pip install $( [ -z "${DEBUG}" ] && echo "-q" ) "$package"
             if [ $? -eq 0 ]; then
                 echo "$package installed successfully"
             else
@@ -78,7 +80,7 @@ if [ -f "$PIP_PACKAGES_FILE" ]; then
 fi
 
 if [ -f "scripts/requirements.txt" ]; then
-    pip install -q -r /config/requirements.txt
+    pip install $( [ -z "${DEBUG}" ] && echo "-q" ) -r /config/requirements.txt
 fi
 
 echo "All installations completed"

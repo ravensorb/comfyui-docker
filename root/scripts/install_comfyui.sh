@@ -9,7 +9,7 @@ echo "########################################"
 cp -R /defaults/config/* /config
 cp -R /defaults/workflows/* /workflows
 
-pip install --upgrade -q pip
+pip install --upgrade $( [ -z "${DEBUG}" ] && echo "-q" ) pip
 
 if [ -f "/scripts/install_packages.sh" ]; then
     chmod +x /scripts/install_packages.sh

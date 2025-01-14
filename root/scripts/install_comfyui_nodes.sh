@@ -23,7 +23,7 @@ update_repo() {
 
     if [ -f "$local_path/requirements.txt" ]; then
         echo "Installing Python dependencies..."
-        pip install -q -r "$local_path/requirements.txt"
+        pip install $( [ -z "${DEBUG}" ] && echo "-q" ) -r "$local_path/requirements.txt"
     fi
 }
 
@@ -31,6 +31,8 @@ process_repo_file() {
     local config_file="$1"
 
     while IFS=' ' read -r repo_url local_path || [[ -n "$repo_url" ]]; do
+        # Skip lines that start with '#'
+        [[ "$repo_url" =~ ^#.*$ ]] || [[ -z "$repo_url" ]] && continue
         update_repo "$repo_url" "$local_path"
     done < "$config_file"
 }
