@@ -1,4 +1,4 @@
-# ComfyUI Flux
+# ComfyUI Docker
 
 ComfyUI Flux is a Docker-based setup for running [ComfyUI](https://github.com/comfyanonymous/ComfyUI) with [FLUX.1](https://www.basedlabs.ai/tools/flux1) models and [HunyuanVideo](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper) as well as a few additional features.
 
@@ -8,6 +8,7 @@ ComfyUI Flux is a Docker-based setup for running [ComfyUI](https://github.com/co
 - Automatic installation of ComfyUI and ComfyUI-Manager
 - **Low VRAM Mode**: Download and use FP8 models for reduced VRAM usage
 - Pre-configured with FLUX models and VAEs
+- Ability to automatically install HunyuanVideo models and VAEs
 - Easy model management and updates
 - GPU support with CUDA 12.1 or 12.4
 
