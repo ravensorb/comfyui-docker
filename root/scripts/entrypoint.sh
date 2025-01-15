@@ -42,8 +42,13 @@ app_args=(
     --input-directory /data/input
     --user-directory /data/user
     --temp-directory /data
-    --extra-model-paths-config /config/extra_models_path.yaml
 )
+
+if [ -f "/app/extra_models_path.yaml" ]; then
+    app_args+=("--extra-model-paths-config /app/extra_models_path.yaml")
+elif [ -f "/config/extra_models_path.yaml" ]; then
+    app_args+=("--extra-model-paths-config /config/extra_models_path.yaml")
+fi
 
 if [ -n "${CLI_ARGS}" ]; then
     # Split CLI_ARGS into an array

@@ -24,7 +24,7 @@ https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/vae/diffusi
   dir=/data/models/vae/SD2.1
   out=diffusion_pytorch_model.fp16.safetensors
 
-https://huggingface.co/stabilityai/stable-diffusion-2-1/rresolve/main/vae/diffusion_pytorch_model.safetensors
+https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/vae/diffusion_pytorch_model.safetensors
   dir=/data/models/vae/SD2.1
   out=diffusion_pytorch_model.safetensors
 

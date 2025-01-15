@@ -41,7 +41,7 @@ download_models() {
         --allow-overwrite=false --auto-file-renaming=false --continue=true \
         --max-connection-per-server=5 --conditional-get=true \
         --save-session=/data/aria2-models.session --save-session-interval=2 \
-        ${HF_TOKEN:+--header="Authorization: Bearer ${HF_TOKEN}"}
+        ${HF_TOKEN:+--header="Authorization: Bearer ${HF_TOKEN}"} || true
 }
 
 [ -f /data/temp/aria2c.log ] && rm -f /data/temp/aria2c.log

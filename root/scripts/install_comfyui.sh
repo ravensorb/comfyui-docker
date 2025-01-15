@@ -14,6 +14,7 @@ echo "[INFO] Downloading ComfyUI & Manager..."
 
 # Lets copy the default config files to /config
 cp -Rn /defaults/config/* /config
+cp -Rn /defaults/app/* /app
 
 # Update pip
 pip install --upgrade $( [ -z "${DEBUG}" ] && echo "-q" ) pip
