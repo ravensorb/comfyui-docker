@@ -7,36 +7,64 @@ comfyui:
 
     download_model_base: /data/models
 
+    # custom_nodes: /data/custom_nodes
+
     # # You can use is_default to mark that these folders should be listed first, and used as the default dirs for eg downloads
     is_default: true
 
     # Path for storing large model checkpoint files
-    checkpoints: checkpoints/
+    checkpoints: checkpoints
     
+    # Path for storing classifier model files
+    classifiers: classifiers
+
     # Path for storing CLIP files
-    clip: clip/
+    # clip: clip
+
+    # Path for storing CLIP_vision files
+    clip_vision: clip_vision
     
-    # Path for storing VAE model files
-    vae: vae/
+    # configs: configs
+
+    # Path for storing ControlNet model files
+    controlnet: controlnet
+       
+    diffusers: diffusers
 
     diffusion_models: |
                  diffusion_models
                  unet
+
+    # Path for storing embedding model files
+    embeddings: embeddings
+
+    # Path for storing GLIgen model files
+    gligen: gligen
+
+    # Path for storing hypernetwork model files
+    hypernetworks: hypernetworks
     
     # Path for storing Lora model files
-    loras: loras/
+    loras: loras
+
+    # Path for storing photomaker model files
+    photomaker: photomaker
+
+    # Path for storing style model files
+    style_models: style_models
     
-    # Path for storing CLIP_vision files
-    clip_vision: clip_vision/
+    # Path for storing text encoder model files
+    text_encoders: |
+        text_encoders
+        clip
     
-    # configs: configs/
-    
-    # Path for storing ControlNet model files
-    controlnet: controlnet/
-    
-    # Path for storing embedding model files
-    embeddings: embeddings/
+    # Path for storing VAE model files
+    vae: vae
+
+    # Path for storing VQ-VAE model files
+    vae_approx: vae_approx
     
     # Path for storing upscale model files
-    upscale_models: upscale_models/
+    upscale_models: upscale_models
  
+

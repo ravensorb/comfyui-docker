@@ -1,8 +1,16 @@
 #!/bin/bash
 
-echo "[INFO] Downloading ComfyUI & Manager..."
+echo "########################################"
+echo "[INFO] Installing/Updating ComfyUI..."
+echo "########################################"
 
 [ -n "${DEBUG}" ] && set -euxo pipefail
+export APP_PATH_BASE=/app
+
+echo "[INFO] Downloading ComfyUI & Manager..."
+
+# Import utils
+. /scripts/utils
 
 # Lets copy the default config files to /config
 cp -Rn /defaults/config/* /config
@@ -17,25 +25,8 @@ if [ -f "/scripts/install_packages.sh" ]; then
 fi
 
 # ComfyUI
-cd /app
-git clone --recurse-submodules \
-    https://github.com/comfyanonymous/ComfyUI.git \
-    || (cd /app/ComfyUI && git pull)
-
-echo "Adding /app/ComfyUI/* to git safe.directory..." && \
-    git config --global --add safe.directory /app/ComfyUI  
-
-# Install  ComfyUI custom nodes
-if [ -f "/scripts/install_comfyui_nodes.sh" ]; then
-    chmod +x /scripts/install_comfyui_nodes.sh    
-    bash /scripts/install_comfyui_nodes.sh
+cd ${APP_PATH_BASE}
+if [ ! -d "/app/.git" || "${COMFYUI_AUTO_UPDATE}" = "true" ]; then
+    get_or_update_repo https://github.com/comfyanonymous/ComfyUI.git ${APP_PATH_BASE}/ComfyUI
+    get_or_update_repo https://github.com/ltdrdata/ComfyUI-Manager.git ${APP_PATH_BASE}/ComfyUI/custom_nodes/ComfyUI-Manager
 fi
-
-# Install ComfyUI custom workflows
-if [ -f "/scripts/install_comfyui_workflows.sh" ]; then
-    chmod +x /scripts/install_comfyui_workflows.sh    
-    bash /scripts/install_comfyui_workflows.sh
-fi
-
-# Finish
-touch /app/.download-complete

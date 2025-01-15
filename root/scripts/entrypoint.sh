@@ -2,6 +2,8 @@
 
 [ -n "${DEBUG}" ] && set -e
 
+export APP_PATH_BASE=/app/ComfyUI
+
 # Ensure correct permissions for /app directory
 if [ ! -w "/app" ]; then
     echo "Warning: Cannot write to /app. Attempting to fix permissions..."
@@ -10,37 +12,19 @@ fi
 
 mkdir -p /data/output /data/input /data/user /data/temp /data/models /data/custom_nodes
 sudo chown -R $(id -u):$(id -g) /data
-
-echo "########################################"
-echo "[INFO] Installing/Updating ComfyUI..."
-echo "########################################"
+chmod +x /scripts/*.sh
 
 # Install or update ComfyUI
-cd /app
-if [ ! -d "/app/ComfyUI" ]; then
-    echo "ComfyUI not found. Installing..."
-    chmod +x /scripts/install_comfyui.sh
-    bash /scripts/install_comfyui.sh
-elif [ "${COMFYUI_AUTO_UPDATE}" = "true" ] || [ "${COMFYUI_AUTO_UPDATE}" = "1" ]; then
-    echo "Adding /app/ComfyUI/* to git safe.directory..."  
-
-    echo "Updating ComfyUI..."
-    cd /app/ComfyUI
-    git config --global --get-all safe.directory | grep -q "/app/ComfyUI" || git config --global --add safe.directory /app/ComfyUI
-    git pull
-
-    echo "Updating ComfyUI-Manager..."
-    cd /app/ComfyUI/custom_nodes/ComfyUI-Manager
-    git config --global --get-all safe.directory | grep -q "/app/ComfyUI/custom_nodes/ComfyUI-Manager" || git config --global --add safe.directory /app/ComfyUI/custom_nodes/ComfyUI-Manager
-    git pull
-
-    cd /app
-else
-    echo "ComfyUI already installed. Skipping install/update..."
-fi
+bash /scripts/install_comfyui.sh
 
 # Download ComfyUI models
-[ -f /scripts/download_comfyui_models.sh ] && bash /scripts/download_comfyui_models.sh
+bash /scripts/download_comfyui_models.sh
+
+# Install  ComfyUI custom nodes
+bash /scripts/download_comfyui_nodes.sh
+
+# Install ComfyUI custom workflows
+bash /scripts/install_comfyui_workflows.sh
 
 echo "########################################"
 echo "[INFO] Starting ComfyUI..."
@@ -57,7 +41,7 @@ app_args=(
     --output-directory /data/output
     --input-directory /data/input
     --user-directory /data/user
-    --temp-directory /data/temp
+    --temp-directory /data
     --extra-model-paths-config /config/extra_models_path.yaml
 )
 

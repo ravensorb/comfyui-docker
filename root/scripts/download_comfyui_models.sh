@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "########################################"
-echo "[INFO] Downloading ComfyUI Models..."
+echo "[INFO] Installing/Updating ComfyUI Custom Models..."
 echo "########################################"
 
 [ -n "${DEBUG}" ] && set -euxo pipefail
@@ -40,7 +40,7 @@ download_models() {
         --log="/data/temp/aria2c.log" --log-level=${LOG_LEVEL} --console-log-level=${LOG_LEVEL_CONSOLE} \
         --allow-overwrite=false --auto-file-renaming=false --continue=true \
         --max-connection-per-server=5 --conditional-get=true \
-        --save-session=/tmp/aria2-models.session --save-session-interval=2 \
+        --save-session=/data/aria2-models.session --save-session-interval=2 \
         ${HF_TOKEN:+--header="Authorization: Bearer ${HF_TOKEN}"}
 }
 

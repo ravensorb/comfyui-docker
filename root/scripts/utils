@@ -1,0 +1,23 @@
+# shellcheck shell=bash
+
+get_or_update_repo() {
+    local repo_url="$1"
+    local local_path="$2"
+
+    git config --global --get-all safe.directory | grep -q "$local_path" || git config --global --add safe.directory $local_path
+
+    if [ ! -d "$local_path" ]; then
+        echo "Cloning repository..."
+        git clone --recurse-submodules "$repo_url" "$local_path"
+    else
+        echo "Updating existing repository..."
+        cd "$local_path" || return
+        git pull
+        cd - || return
+    fi
+
+    if [ -f "$local_path/requirements.txt" ]; then
+        echo "Installing Python dependencies..."
+        pip install $( [ -z "${DEBUG}" ] && echo "-q" ) -r "$local_path/requirements.txt"
+    fi
+}

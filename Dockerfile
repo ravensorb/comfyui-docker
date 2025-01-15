@@ -98,6 +98,9 @@ RUN pip install --no-cache-dir --break-system-packages \
     -r https://raw.githubusercontent.com/comfyanonymous/ComfyUI/master/requirements.txt \
     -r https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/requirements.txt
 
+RUN pip install --no-cache-dir --break-system-packages \
+    opencv-python 
+
 # Install envsubst
 RUN curl -L https://github.com/a8m/envsubst/releases/download/v1.4.2/envsubst-$(uname -s)-$(uname -m) -o /usr/local/bin/envsubst && \
     chmod +x /usr/local/bin/envsubst

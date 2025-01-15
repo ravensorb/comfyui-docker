@@ -5,19 +5,19 @@ https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltx-video-2b-v0.9.1.saf
 
 # Hunyuan Video Model
 https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/diffusion_models/hunyuan_video_t2v_720p_bf16.safetensors
-  dir=/data/models/diffusion_models
+  dir=/data/models/diffusion_models/hunyuan_video
   out=hunyuan_video_t2v_720p_bf16.safetensors
 
 https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp16.safetensors
-  dir=/data/models/text_encoders 
+  dir=/data/models/clip
   out=llava_llama3_fp16.safetensors
 
 https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp8_scaled.safetensors
-  dir=/data/models/text_encoders 
+  dir=/data/models/clip
   out=llava_llama3_fp8_scaled.safetensors
 
 https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/clip_l.safetensors
-  dir=/data/models/text_encoders 
+  dir=/data/models/clip 
   out=clip_l.safetensors
 
 https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/vae/hunyuan_video_vae_bf16.safetensors

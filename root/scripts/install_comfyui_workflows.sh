@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "########################################"
-echo "[INFO] Custom workflows..."
+echo "[INFO] Installing/Updating ComfyUI Workflows..."
 echo "########################################"
 
 [ -n "${DEBUG}" ] && set -euxo pipefail
@@ -9,12 +9,6 @@ echo "########################################"
 # Copy workflows
 WORKFLOWS_TEMPLATE_DIR="/defaults/workflows"
 WORKFLOWS_DIR="/data/user/default/workflows"
-mkdir -p "$WORKFLOWS_DIR"
 
-if [ -d "${WORKFLOWS_TEMPLATE_DIR}" ]; then
-    cp -Ruv ${WORKFLOWS_TEMPLATE_DIR}/* "$WORKFLOWS_DIR/" || true
-    echo "[INFO] Workflows copied successfully."
-else
-    echo "[WARNING] No custom workflows found. Skipping workflow copy."
-fi
-
+[ ! -d "${WORKFLOWS_DIR}" ] && mkdir -p "$WORKFLOWS_DIR"
+[ -d "${WORKFLOWS_TEMPLATE_DIR}" ] && cp -Ruv ${WORKFLOWS_TEMPLATE_DIR}/* "$WORKFLOWS_DIR/" 
