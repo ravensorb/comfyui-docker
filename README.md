@@ -45,11 +45,14 @@ ComfyUI Flux is a Docker-based setup for running [ComfyUI](https://github.com/co
       ports:
         - "8188:8188"
       volumes:
-        - "./data:/app"
+        - "./data/app:/app"
+        - "./data/data:/data"
+        - "./data/config:/config"
       environment:
         - CLI_ARGS=
         - HF_TOKEN=${HF_TOKEN}
         - LOW_VRAM=${LOW_VRAM:-false}
+        - COMFYUI_DOWNLOAD_VIDEO_MODELS=${COMFYUI_DOWNLOAD_VIDEO_MODELS:-true}
       deploy:
         resources:
           reservations:
