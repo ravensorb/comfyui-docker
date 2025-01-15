@@ -20,7 +20,7 @@ install_apt_packages() {
 
     while IFS= read -r package || [ -n "$package" ]; do
         # Skip lines that start with '#'
-        [[ "$package" =~ ^#.*$ ]] || [[ -z "$repo_url" ]] && continue
+        [[ "$package" =~ ^#.*$ ]] && continue
         if [ -n "$package" ]; then
             echo "Installing apt package: $package..."
             apt-get install -y $( [ -z "${DEBUG}" ] && echo "-qq" ) "$package"
@@ -64,6 +64,9 @@ install_pip_packages() {
         fi
     done < "$packages_file"
 }
+
+# Install envsubst
+# curl -L https://github.com/a8m/envsubst/releases/download/v1.4.2/envsubst-`uname -s`-`uname -m` -o /usr/local/bin/envsubst && chmod +x /usr/local/bin/envsubst
 
 # Main script execution
 APT_PACKAGES_FILE="/config/packages_system.txt"

@@ -1,31 +1,33 @@
 # FLUX.1[schnell] UNet
 https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.safetensors
-  dir=ComfyUI/models/unet
+  dir=/data/models/diffusion_models
   out=flux1-schnell.safetensors
 
 # FLUX.1[dev] UNet (Requires HF_TOKEN)
 # Requires HF_TOKEN
 https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors
-  dir=ComfyUI/models/unet
+  dir=/data/models/diffusion_models
   out=flux1-dev.safetensors
 
 # Flux Text Encoders
 https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors
-  dir=ComfyUI/models/clip
+  dir=/data/models/text_encoders
   out=clip_l.safetensors
+
 https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors
-  dir=ComfyUI/models/clip
+  dir=/data/models/text_encoders
   out=t5xxl_fp16.safetensors
+
 https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn.safetensors
-  dir=ComfyUI/models/clip
+  dir=/data/models/text_encoders
   out=t5xxl_fp8_e4m3fn.safetensors
 
 # VAE
 https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors
-  dir=ComfyUI/models/vae
+  dir=/data/models/vae
   out=ae.safetensors
 
 # Loras
 https://huggingface.co/comfyanonymous/flux_RealismLora_converted_comfyui/resolve/main/flux_realism_lora.safetensors
-  dir=ComfyUI/models/loras
+  dir=/data/models/loras
   out=flux_realism_lora.safetensors

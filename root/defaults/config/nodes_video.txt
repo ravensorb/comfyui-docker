@@ -1,5 +1,5 @@
-https://github.com/Lightricks/ComfyUI-LTXVideo /app/ComfyUI/custom_nodes/ComfyUI-LTXVideo
-https://github.com/logtd/ComfyUI-LTXTricks /app/ComfyUI/custom_nodes/ComfyUI-LTXTricks
-https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite /app/ComfyUI/custom_nodes/comfyui-videohelpersuite
-https://github.com/melMass/comfy_mtb /app/ComfyUI/custom_nodes/comfy-mtb
-https://github.com/kijai/ComfyUI-HunyuanVideoWrapper /app/ComfyUI/custom_nodes/comfyui-hunyuanvideowrapper
+https://github.com/Lightricks/ComfyUI-LTXVideo ${APP_PATH_BASE}/custom_nodes/ComfyUI-LTXVideo
+https://github.com/logtd/ComfyUI-LTXTricks ${APP_PATH_BASE}/custom_nodes/ComfyUI-LTXTricks
+https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite ${APP_PATH_BASE}/custom_nodes/comfyui-videohelpersuite
+https://github.com/melMass/comfy_mtb ${APP_PATH_BASE}/custom_nodes/comfy-mtb
+https://github.com/kijai/ComfyUI-HunyuanVideoWrapper ${APP_PATH_BASE}/custom_nodes/comfyui-hunyuanvideowrapper

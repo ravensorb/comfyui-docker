@@ -132,3 +132,5 @@ docker compose pull
 - **Switching Between Modes**: If you change the `LOW_VRAM` setting after the initial run, the container will automatically download the required models for the new setting upon restart.
 - **Model Downloading**: The scripts are designed to skip downloading models that already exist, so you won't waste bandwidth re-downloading models you already have.
 - **Huggingface Token**: The `HF_TOKEN` is only necessary for downloading the `flux1-dev.safetensors` model when `LOW_VRAM=false`.
+- **Customizing folders for ComfyUI**: https://medium.com/xrlo-extended-reality-lowdown/sharing-models-and-custom-nodes-in-comfyui-0965ef7f1485
+- **ComfyUI Folder Structure**: https://comfyui-wiki.com/en/interface/files

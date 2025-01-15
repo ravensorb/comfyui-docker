@@ -13,6 +13,7 @@ services:
       - "8189:8188"
     volumes:
       - "./data/app:/app"
+      - "./data/data:/data"
       - "./data/config:/config"
     environment:
       - CLI_ARGS=

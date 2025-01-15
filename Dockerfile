@@ -50,6 +50,7 @@ RUN apt-get update && apt-get install -y \
     libvdpau1 \
     libnuma1 \
     build-essential \
+    curl \
     gcc \
     g++ \
     aria2 \
@@ -72,6 +73,7 @@ RUN ldconfig
 
 ENV PIP_ROOT_USER_ACTION=ignore
 ENV COMFYUI_DOWNLOAD_STD_MODELS=true
+ENV COMFYUI_DOWNLOAD_VIDEO_MODELS=true
 
 # Define build argument for CUDA version with default value
 ARG CUDA_VERSION=cu124
@@ -96,10 +98,14 @@ RUN pip install --no-cache-dir --break-system-packages \
     -r https://raw.githubusercontent.com/comfyanonymous/ComfyUI/master/requirements.txt \
     -r https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/requirements.txt
 
+# Install envsubst
+RUN curl -L https://github.com/a8m/envsubst/releases/download/v1.4.2/envsubst-$(uname -s)-$(uname -m) -o /usr/local/bin/envsubst && \
+    chmod +x /usr/local/bin/envsubst
+
 # Create a low-privilege user
 RUN useradd -m -d /app runner \
-    && mkdir -p /scripts /workflows /config \
-    && chown runner:runner /app /scripts /workflows /config
+    && mkdir -p /scripts /data /config \
+    && chown runner:runner /app /scripts /data /config
     
 COPY --chown=runner:runner root/. /
 
@@ -108,7 +114,7 @@ RUN echo "runner ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/runner
 
 USER runner:runner
 
-VOLUME [ "/app", "/config" ]
+VOLUME [ "/app", "/config", "/data" ]
 
 WORKDIR /app
 
