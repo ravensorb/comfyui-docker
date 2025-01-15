@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: comfyui
     image: ravensorb/comfyui-docker:latest
-    restart: no
+    restart: unless-stopped
     user: "0:0"
     env_file:
       - .env

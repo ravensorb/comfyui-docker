@@ -1,7 +1,48 @@
 # LTX-Video
 https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltx-video-2b-v0.9.1.safetensors
-  dir=/data/models/checkpoints
+  dir=/data/models/checkpoints/LTXV
   out=ltx-video-2b-v0.9.1.safetensors
+
+https://huggingface.co/Lightricks/LTX-Video/blob/main/vae/diffusion_pytorch_model.safetensors
+  dir=/data/models/vae/LTXV
+  out=diffusion_pytorch_model.safetensors
+
+# Stable diffusion
+https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.safetensors
+  dir=/data/models/checkpoints/SD2.1
+  out=v2-1_768-ema-pruned.safetensors
+
+https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/text_encoder/model.fp16.safetensors
+  dir=/data/models/text_encoder/SD2.1
+  out=model.fp16.safetensors
+
+https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/text_encoder/model.safetensors
+  dir=/data/models/text_encoder/SD2.1
+  out=model.safetensors
+
+https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/vae/diffusion_pytorch_model.fp16.safetensors
+  dir=/data/models/vae/SD2.1
+  out=diffusion_pytorch_model.fp16.safetensors
+
+https://huggingface.co/stabilityai/stable-diffusion-2-1/rresolve/main/vae/diffusion_pytorch_model.safetensors
+  dir=/data/models/vae/SD2.1
+  out=diffusion_pytorch_model.safetensors
+
+https://huggingface.co/stabilityai/stable-video-diffusion-img2vid/resolve/main/svd.safetensors
+  dir=/data/models/checkpoints/SVD
+  out=svd.safetensors
+
+# https://huggingface.co/stabilityai/stable-video-diffusion-img2vid/resolve/main/svd_image_decoder.safetensors
+#   dir=/data/models/checkpoints/SVD
+#  out=svd_image_decoder.safetensors
+
+https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt/resolve/main/svd_xt.safetensors
+  dir=/data/models/checkpoints/SVD
+  out=svd_xt.safetensors
+
+# https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt/resolve/main/svd_xt_image_decoder.safetensors
+#   dir=/data/models/checkpoints/SVD
+#   out=svd_xt_image_decoder.safetensors
 
 # Hunyuan Video Model
 https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/diffusion_models/hunyuan_video_t2v_720p_bf16.safetensors
@@ -9,17 +50,17 @@ https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_file
   out=hunyuan_video_t2v_720p_bf16.safetensors
 
 https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp16.safetensors
-  dir=/data/models/clip
+  dir=/data/models/text_encoder/hunyuan_video
   out=llava_llama3_fp16.safetensors
 
 https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp8_scaled.safetensors
-  dir=/data/models/clip
+  dir=/data/models/text_encoder/hunyuan_video
   out=llava_llama3_fp8_scaled.safetensors
 
 https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/clip_l.safetensors
-  dir=/data/models/clip 
+  dir=/data/models/text_encoder/hunyuan_video
   out=clip_l.safetensors
 
 https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/vae/hunyuan_video_vae_bf16.safetensors
-  dir=/data/models/vae
+  dir=/data/models/vae/hunyuan_video
   out=hunyuan_video_vae_bf16.safetensors

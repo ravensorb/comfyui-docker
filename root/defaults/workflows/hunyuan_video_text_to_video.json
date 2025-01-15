@@ -264,7 +264,7 @@
         "Node name for S&R": "VAELoader"
       },
       "widgets_values": [
-        "hunyuan_video_vae_bf16.safetensors"
+        "hunyuan_video/hunyuan_video_vae_bf16.safetensors"
       ]
     },
     {
@@ -297,8 +297,8 @@
         "Node name for S&R": "DualCLIPLoader"
       },
       "widgets_values": [
-        "clip_l.safetensors",
-        "llava_llama3_fp8_scaled.safetensors",
+        "hunyuan_video/clip_l.safetensors",
+        "hunyuan_video/llava_llama3_fp8_scaled.safetensors",
         "hunyuan_video"
       ]
     },
@@ -439,7 +439,7 @@
         "Node name for S&R": "UNETLoader"
       },
       "widgets_values": [
-        "hunyuan_video_t2v_720p_bf16.safetensors",
+        "hunyuan_video/hunyuan_video_t2v_720p_bf16.safetensors",
         "default"
       ],
       "color": "#223",

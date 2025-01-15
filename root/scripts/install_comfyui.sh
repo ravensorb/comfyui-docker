@@ -26,7 +26,7 @@ fi
 
 # ComfyUI
 cd ${APP_PATH_BASE}
-if [ ! -d "/app/.git" || "${COMFYUI_AUTO_UPDATE}" = "true" ]; then
+if [ ! -d "/app/.git" ] || [ "${COMFYUI_AUTO_UPDATE}" = "true" ]; then
     get_or_update_repo https://github.com/comfyanonymous/ComfyUI.git ${APP_PATH_BASE}/ComfyUI
     get_or_update_repo https://github.com/ltdrdata/ComfyUI-Manager.git ${APP_PATH_BASE}/ComfyUI/custom_nodes/ComfyUI-Manager
 fi
